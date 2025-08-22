@@ -80,8 +80,10 @@ export const LoginPage = () => {
       setLoading(true)
       setError("")
       try {
+        const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://military-base-management-system-backend.onrender.com";
+        console.log("API BASE URL:", API_BASE_URL);
         const res = await axios.post(
-          `${import.meta.env.VITE_API_BASE_URL}/api/auth/signin`,
+          `${API_BASE_URL}/api/auth/signin`,
           {
             email,
             password,
